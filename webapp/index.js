@@ -15,6 +15,12 @@ sap.ui.require([
             firstName: "Mua",
             lastName: "Jeong",
             enabled: true,
+            address: {
+                street: "1 Any Lane",
+                city: "Walldorf",
+                zip: "69190",
+                country: "Germany"
+            },
             panelHeaderText: "Data Binding Basics"
         });
 
