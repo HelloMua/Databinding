@@ -34,15 +34,20 @@ sap.ui.require([
 
         sap.ui.getCore().setModel(oResourceModel, "i18n");
 
-        oModel.setDefaultBindingMode(BindingMode.OneWay);
+        // oModel.setDefaultBindingMode(BindingMode.OneWay);
 
         // Assign the model object to the SAPUI5 core
         sap.ui.getCore().setModel(oModel);
         // this.getView().setModel(oModel);와 같은 의미
 
         // Display the XML view called "App"
-        new XMLView({
+        var oView = new XMLView({
             viewName: "sap.ui.demo.db.view.App"
-        }).placeAt("content");
+        })
+
+        // Register the view with the message manager
+        sap.ui.getCore().getMessageManager().registerObject(oView, true);
+
+        oView.placeAt("content");
     });
 });
