@@ -14,11 +14,11 @@ sap.ui.require([
 
         // Assign the model object to the SAPUI5 core
         sap.ui.getCore().setModel(oModel);
-        // this.getView().setModel(oModel);
+        // this.getView().setModel(oModel);와 같은 의미
 
-		// Create a text UI element that displays a hardcoded text string
+		// Display a text element whose text is derived from the model object
 		new Text({
-            text: "Hi, my name is Jeong Mua"
+            text: "{/greetingText}"
         }).placeAt("content");      // index.html에 있는 body의 id와 연결
     });
 });
